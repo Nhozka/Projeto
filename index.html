@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Limpeza de Ruas - Amarante</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="info-container">
+        <div class="info-box">Distância restante: <span id="remaining-distance">0</span> metros</div>
+        <div class="info-box">Distância total: <span id="total-distance">0</span></div>
+        <div class="info-box">Data: <span id="date">Carregando...</span></div>
+        <div class="info-box">Hora: <span id="time">Carregando...</span></div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="fill-buttons-wrapper">
+            <label for="cleaned-distance">Distância limpa:</label>
+            <input type="number" id="cleaned-distance" value="0" class="fill">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" class="fill" autocomplete="off">
+            <div class="disclaimer">
+                * A data, hora e nome são permanentemente salvos na arquivo.
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="button-container">
+    <button id="update-button" class="btn">Atualizar Progresso</button>
+    <button id="load-data" class="btn">Carregar Dados</button>
+    <button id="save-data" class="btn">Salvar Dados</button>
+    <input type="file" id="file-input" style="display: none" aria-label="Carregar arquivo de dados">
+</div>
+</body>
+</html>
