@@ -75,6 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
         a.download = "dados_limpeza.json";
         a.click();
         URL.revokeObjectURL(url);
+        setTimeout(function(){
+            location.reload(true);
+        }, 1000);
     });
 
     document.getElementById("load-data").addEventListener("click", () => {
@@ -92,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById("total-distance").innerText = data.totalDistance;
                     document.getElementById("cleaned-distance").value = data.cleanedDistance;
                     document.getElementById("remaining-distance").innerText = data.remainingDistance;
+                    document.getElementById("name").placeholder = data.name || '';
                     updateRoute();
                 } catch (error) {
                     console.error("Error reading file:", error);
@@ -105,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch("https://worldtimeapi.org/api/timezone/Europe/Lisbon");
             const data = await response.json();
-            const dateTime = new Date(data.datetime);
+            const dateTime = new Date(new Date(data.datetime).getTime() + 3600 * 1000); // Add 1 hour
             document.getElementById("date").innerText = dateTime.toLocaleDateString("pt-PT");
             document.getElementById("time").innerText = dateTime.toLocaleTimeString("pt-PT");
         } catch (error) {
@@ -116,5 +120,5 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     fetchDateTime();
-    setInterval(fetchDateTime, 60000);
+    setInterval(fetchDateTime, 1000);
 });

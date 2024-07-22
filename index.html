@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="main-container">
@@ -30,14 +29,12 @@
             <label for="cleaned-distance">Distância limpa:</label>
             <input type="number" id="cleaned-distance" value="0" class="fill">
             <label for="name">Nome:</label>
-            <input type="text" id="name" class="fill" autocomplete="off">
+            <input type="text" id="name" class="fill" autocomplete="off" placeholder="">
             <div class="disclaimer">
                 * A data, hora e nome são permanentemente salvos na arquivo.
             </div>
         </div>
     </div>
-
-
 </div>
 
 <div class="button-container">
@@ -46,5 +43,7 @@
     <button id="save-data" class="btn">Salvar Dados</button>
     <input type="file" id="file-input" style="display: none" aria-label="Carregar arquivo de dados">
 </div>
+
+<script src="app.js"></script>
 </body>
 </html>
